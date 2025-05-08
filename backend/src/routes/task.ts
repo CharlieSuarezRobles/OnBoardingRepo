@@ -17,6 +17,11 @@ router.get("/:id", TaskController.getTask);
  * TaskValidator.createTask processes the request and determines whether the
  * request should be sent through or an error should be thrown.
  */
+
+router.put("/:id", TaskValidator.updateTask, TaskController.updateTask);
+//Assumed that this route would have the same path as the route for
+//create task
+
 router.post("/", TaskValidator.createTask, TaskController.createTask);
 router.delete("/:id", TaskController.removeTask);
 
