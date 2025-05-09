@@ -81,3 +81,24 @@ export const removeTask: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
+
+export const updateTask: RequestHandler = async (req, res, next) => {
+  // your code here
+  const errors = validationResult(req);
+
+  try {
+    validationErrorParser(errors);
+    if (req.params.id !== req.body._id) {
+      res.status(400);
+    }
+    const result = await TaskModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!result) {
+      throw createHttpError(404, "Task not found");
+    }
+    return res.status(200).json(result);
+
+    // your code here
+  } catch (error) {
+    next(error);
+  }
+};
