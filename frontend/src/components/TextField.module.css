@@ -22,3 +22,7 @@
 .input.error {
   border-color: var(--color-error);
 }
+
+.checked {
+  color: var(--color-text-secondary);
+}
