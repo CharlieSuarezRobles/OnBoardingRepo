@@ -54,7 +54,6 @@ export const createTask: RequestHandler = async (req, res, next) => {
   try {
     // if there are errors, then this function throws an exception
     validationErrorParser(errors);
-
     const task = await TaskModel.create({
       title: title,
       description: description,
@@ -62,12 +61,13 @@ export const createTask: RequestHandler = async (req, res, next) => {
       dateCreated: Date.now(),
       assignee,
     });
-
-    await task.populate("assignee");
+    console.log("Task returned from DB:", task);
+    //await task.populate("assignee");
+    const populatedTask = await task.populate("assignee");
 
     // 201 means a new resource has been created successfully
     // the newly created task is sent back to the user
-    res.status(201).json(task);
+    res.status(201).json(populatedTask);
   } catch (error) {
     next(error);
   }

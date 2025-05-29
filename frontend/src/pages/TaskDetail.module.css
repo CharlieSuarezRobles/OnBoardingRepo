@@ -1,0 +1,41 @@
+.outerDiv {
+  display: flex;
+  flex-direction: column;
+  width: Fixed(900px);
+  height: 346px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  gap: 24px;
+  align-items: baseline; /* ← changed from center */
+  margin-bottom: 1rem;
+}
+
+.innerDiv1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: Fill(900px);
+  height: 35px;
+  gap: 16px;
+  align-items: baseline; /* ← changed from center */
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.taskTitle {
+  white-space: nowrap; /* Keep text on one line */
+  overflow: hidden; /* Hide anything that overflows the box */
+  text-overflow: ellipsis; /* Show "..." at the end when text overflows */
+  max-width: 87%; /* Optional: limit width of the element */
+  display: inline-block;
+}
+
+.innerDiv2 {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  /*height: 19px; */
+  gap: 24px;
+  align-items: baseline; /* ← changed from center */
+  margin-bottom: 1rem;
+}
