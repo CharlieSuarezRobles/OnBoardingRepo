@@ -1,0 +1,77 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 124px;
+  top: 20px;
+  left: 20px;
+  radius: 5px;
+  justify-content: center;
+  align-items: center;
+  /*border: 1px solid #9747FF;*/
+}
+
+.userTagStyle {
+  width: 12rem; /* or 192px */
+  width: 200px;
+  height: 32px;
+  gap: 8px;
+  max-width: 87%;
+  text-overflow: ellipsis; /* Show "..." at the end when text overflows */
+}
+
+.assignedFalse {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  height: 32px;
+  top: 72px;
+  left: 20px;
+  gap: 8px;
+  align-items: center;
+}
+
+.assignedTrue {
+  display: flex;
+  width: 200px;
+  height: 32px;
+  top: 20px;
+  left: 20px;
+  gap: 8px;
+}
+
+.textBoxTrue {
+  width: 160px; /* limits how wide the text can go */
+  height: 19px; /* optional */
+  flex: 1;
+  min-width: 0;
+  color: #ffffff;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-overflow: ellipsis; /* Show "..." at the end when text overflows */
+  overflow: hidden; /* ⬅️ Must include */
+  white-space: nowrap; /* ⬅️ Must include */
+}
+
+.textBoxFalse {
+  display: flex;
+  align-items: center;
+  width: 200px; /* limits how wide the text can go */
+  height: 32px; /* optional */
+  color: #ffffff;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+}
+
+.image {
+  width: 32px;
+  height: 32px;
+}

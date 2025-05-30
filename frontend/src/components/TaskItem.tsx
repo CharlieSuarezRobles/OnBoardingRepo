@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { updateTask } from "src/api/tasks";
 import { CheckButton } from "src/components";
 import styles from "src/components/TaskItem.module.css";
+import { UserTag } from "src/components/UserTag";
+import styles2 from "src/components/UserTag.module.css";
 
 import type { Task } from "src/api/tasks";
 
@@ -49,14 +51,26 @@ export function TaskItem({ task: initialTask }: TaskItemProps) {
         ></CheckButton> /* render CheckButton here */
       }
       <div className={textContainer}>
-        <Link to={`/task/${task._id}`} className={styles.taskLink}>
-          {task.title}
-        </Link>
-        {task.description && (
-          <span className={styles.description}>
-            {task.description /* render description here */}
-          </span>
-        )}
+        <div className={styles.innerTextContainer}>
+          {task.description && (
+            <>
+              <Link to={`/task/${task._id}`} className={styles.taskLink}>
+                {<b>{task.title}</b>}
+              </Link>
+              <span className={styles.description}>
+                {task.description /* render description here */}
+              </span>
+            </>
+          )}
+          {!task.description && (
+            <>
+              <Link to={`/task/${task._id}`} className={styles.taskLink}>
+                {<b>{task.title}</b>}
+              </Link>
+            </>
+          )}
+        </div>
+        <UserTag user={task.assignee} className={styles2.userTagStyle}></UserTag>
       </div>
     </div>
   );
