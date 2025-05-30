@@ -94,6 +94,7 @@ export function TaskForm({ mode, task, onSubmit }: TaskFormProps) {
         payload.assignee = assignee;
       }
 
+      console.log("Payload being sent:", payload);
       updateTask(payload)
         .then((result) => {
           if (result.success) {
