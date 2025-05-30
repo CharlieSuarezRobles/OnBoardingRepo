@@ -8,7 +8,7 @@ export const getAllTasks: RequestHandler = async (req, res, next) => {
   try {
     // your code here
 
-    const taskSet = await TaskModel.find(tasks).sort({ dateCreated: -1 });
+    const taskSet = await TaskModel.find(tasks).sort({ dateCreated: -1 }).populate("assignee");
 
     if (!taskSet || taskSet.length == 0) {
       throw createHttpError(404, "Task not found");

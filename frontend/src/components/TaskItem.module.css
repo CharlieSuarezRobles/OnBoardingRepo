@@ -7,15 +7,26 @@
   column-gap: 0.25rem;
 }
 
+.item:hover {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: #16404f;
+}
+
 .textContainer {
   height: 100%;
   border-bottom: 1px solid var(--color-text-secondary);
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: stretch;
   overflow: hidden;
+  align-items: center;
 }
 
 .textContainer span {
@@ -35,4 +46,22 @@
 
 .checked {
   color: var(--color-text-secondary);
+}
+
+.taskLink {
+  text-decoration: none; /* removes underline */
+  color: inherit; /* uses the same color as the text around it */
+}
+
+.taskLink:hover {
+  text-decoration: underline; /* show underline only when hovered */
+}
+
+.innerTextContainer {
+  display: flex;
+  width: 360px;
+  height: 50px;
+  gap: 2px;
+  flex-direction: column;
+  justify-content: center;
 }
